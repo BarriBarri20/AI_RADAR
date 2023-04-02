@@ -1,53 +1,40 @@
-AI News Radar
-This is a Django application that was created by Your Name for the AI_NIGHT_CHALLENGE competition. The application scrapes AI news from different websites asynchronously. The application uses Selenium, Redis, MySQL, Scrapy, and Celery to scrape news articles from various sources and store them in a database. The application is characterized by date and search, and it uses Tailwind CSS for styling.
+# AI News Radar
 
-Requirements
-Python 3.7 or higher
-Django 3.2 or higher
-Redis
-MySQL
-Scrapy
-Celery
-Selenium
-Tailwind CSS
-Installation
-Clone the repository:
+This is a Django application that was created by Your Name for the AI_NIGHT_CHALLENGE competition. The application scrapes AI news from different websites asynchronously. The application uses **Selenium**, **Redis**, **MySQL**, **Scrapy**, and **Celery** to scrape news articles from various sources and store them in a database. The application is characterized by date and search, and it uses ***Tailwind CSS*** for styling.
 
-bash
-Copy code
-git clone https://github.com/yourusername/ai-news-radar.git
-Install the dependencies:
+### Installation
 
-bash
-Copy code
-cd ai-news-radar
-pip install -r requirements.txt
-Set up the database:
+	$ git clone https://github.com/BarriBarri20/AI_RADAR.git
+	$ cd ai-news-radar
+	
+	#install requirement
+	$ pyenv install 
+	$ pyenv shell
+	
+	# make the necessary migration
+	$ python manage.py migrate
+	
+	# run the redis server
+	$ redis-server
+	
+	#Start the Celery worker
+	celery -A newsscraper worker --concurrency=4 --loglevel=info
 
-Copy code
-python manage.py migrate
-Start the Redis server:
+	#start the django server
+	$ python manage.py runserver
 
-Copy code
-redis-server
-Start the Celery worker:
+Now you can test it on :
+http://localhost:8000
+	
+### Usage
 
-css
-Copy code
-celery -A ai_news_radar worker --concurrency=4 --loglevel=info
-Start the Django server:
-
-Copy code
-python manage.py runserver
-Open your browser and go to http://localhost:8000 to view the application.
-
-Usage
 The application automatically scrapes AI news from different websites every 20 seconds. You can also manually trigger the scraping process by clicking the "Scrape Now" button on the home page. The scraped news articles are displayed on the home page and are searchable by date and keyword.
 
-You can click on the "Read More" button for each news article to view the full article on the source website.
+With the ability to categorize fields by their unique HTML tags, you can easily scrape news articles from other websites and add them to the application. Additionally, it's possible to scrape from other websites as well. The key is to invest time in figuring out how to categorize the fields of each article based on their unique HTML tag. This will enable you to expand the scope of the application and provide a wider range of AI news to users.
 
-Credits
-This application was created by Your Name as a personal project for the AI_NIGHT_CHALLENGE competition. The AI news articles are scraped from various sources using Scrapy and Selenium.
+You can click on the article to view the full article on the source website.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+### Credits
+
+This application was created by [Akram](https://github.com/BarriBarri20) as a personal project for the AI_NIGHT_CHALLENGE competition. The AI news articles are scraped from dev.to.
+

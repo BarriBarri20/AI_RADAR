@@ -36,5 +36,5 @@ You can click on the article to view the full article on the source website.
 
 ### Credits
 
-This application was created by ***Lovelace team*** as a personal project for the AI_NIGHT_CHALLENGE competition. The AI news articles are scraped from dev.to.
+This application was created by ***Lovelace team*** for the AI_NIGHT_CHALLENGE competition. The AI news articles are scraped from dev.to.
 
